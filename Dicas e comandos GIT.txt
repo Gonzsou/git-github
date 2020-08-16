@@ -1,0 +1,73 @@
+
+git config --global user.name "indgfnrfgnjr"		//setup git username
+git config --global user.email "ergrtgr@fref.com"	//setup git email
+git config --list					//lists all config 
+
+
+create a folder for your project
+navigate into the folder address
+git init 				// initialize a git repository, it says  git it needs to keep track of the changes in this particular folder
+
+git add .	//add all files which are present in this project folder to git staging area, a stage prior to commit 
+
+git status				// shows git status
+
+git commit -m "My first commit"		// commit a file to git, specifying a commit message
+
+git log 				// gives us a log of all things that happened
+
+
+Everytime we change a file, we need to add it to the staging area first, and then commit it
+
+open and change code in demo1 file for example
+save the file 
+in the git bash terminal: 	git add "demo1"
+in the git bash terminal:	git commit -m "commit description message"
+
+if changes made to more than one file
+open and change code in the files to be change
+save the files 
+in the git bash terminal: 	git add .
+in the git bash terminal:	git commit -m "commit description message"
+
+
+commit directly
+
+git commit -am "this is a direct commit"
+
+
+undo not commited changes made by user on git 
+git bash terminal: 	git checkout -m  nomefiheiro.html 
+
+
+unstageing files (if we have a file added to the stageing area but we no longer want to commit the file)
+git bash terminal: 	git reset HEAD nomeficheiro.css
+
+Get to an old version of a particular file 
+git bash terminal:	git checkout commitkey -m 	(using only the first letters of the key works fine) 
+
+
+push project to github 
+1- on github create a new repository
+2- copy url of the repository presented on the quick setup heading, in github.com
+3- git bash:	git remote add alias_url https://github.com/...
+4- git bash:	git push -u alias_url master 	(master -the branch we want to push the project to)
+
+pushing changes to github
+First commit the changes locally to git, then use the push command to push the code to github
+git add .
+git commit -m "commit description" 
+git push alias_url master (if the branch to push to is the master branch)
+
+Collaborate using github
+create a folder for the project
+on github click on "clone or download" and copy the url
+in the git bash terminal, navigate to the project folder 
+git bash terminal:	 git clone copied_url_from_github
+make the wanted changes
+git bash terminal:	 git status
+git bash terminal:	 git add .
+git bash terminal:	 git commit -m "changes description"
+git bash terminal:	 git checkout -b newbranch
+git bash terminal:	 git push copied_url_from_github newbranch
+wait for the colleague to pull and merge our code if he wants to
